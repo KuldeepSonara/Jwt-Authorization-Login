@@ -57,7 +57,7 @@ app.post("/api/refresh", (req, res) => {
 
 const generateAccessToken = (user) => {
     return jwt.sign({ id: user.id, isAdmin: user.isAdmin },
-        process.env.SECRET_KEY, { expiresIn: "15m" });
+        process.env.SECRET_KEY, { expiresIn: "30s" });
 }
 
 
@@ -65,7 +65,7 @@ const generateAccessToken = (user) => {
 
 const generateRefreshToken = (user) => {
     return jwt.sign({ id: user.id, isAdmin: user.isAdmin },
-        process.env.REFRESH_SECRET_KEY, );
+        process.env.REFRESH_SECRET_KEY );
 }
 
 // POST method

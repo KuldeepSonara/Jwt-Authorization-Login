@@ -38,7 +38,7 @@ axiosJWT.interceptors.request.use(async (config) =>{
     return config;
   },(error)=>{
     return Promise.reject(error);
-  }) 
+  })
 
 const handleDelete = async (id)=>{
   setSuccess(false);
@@ -65,6 +65,7 @@ const handleDelete = async (id)=>{
             {error && (
                 <span className="error">
                   You are not allowed to delete this user!
+                
                 </span>
             )}
             {success && (
